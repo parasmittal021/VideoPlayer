@@ -1,0 +1,83 @@
+<div class="container" >
+  <div class="row">
+  <div class="col-xs-12">
+  <div class="jumbotron">
+    <h1 style="text-align:center">VideoPlayer</h1>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+  <h2 style="text-align:center">Login</h2>
+</div>
+</div>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+  <form class="form-horizontal" #userForm="ngForm" (ngSubmit)=" userForm.valid && login(userForm)" novalidate>
+          <div class="row">
+                  <div class="col-sm-12">
+                          <div class="form-group">
+                              <label  for="email">Email</label>
+                              
+ <input type="text" name= "email" class="form-control" id="email" placeholder="Enter Email" ngModel required #email="ngModel"  pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+ <div *ngIf="email.invalid && (email.dirty || email.touched)"
+ class="alert alert-danger">
+
+<div *ngIf="email.errors.required">
+Email is required.
+</div>
+<div [hidden]="!email.errors?.pattern">
+       Enter valid emailId.
+     </div> 
+</div>  
+                          </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                                  <div class="col-sm-12">
+                          <div class="form-group">
+                              <label for="password">Password</label>
+                             
+                                  <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password"  ngModel required #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$">
+                                  <div *ngIf="password.invalid && (password.dirty ||password.touched)"
+                                  class="alert alert-danger">
+                              
+                                <div *ngIf="password.errors.required">
+                                        Password is required.
+                                </div>
+                                <div [hidden]="!password.errors?.pattern">
+                                  Minimum eight characters, at least one letter, one number and one special character
+                                </div> 
+                        </div>
+                          </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                                <div class="col-sm-12">
+                                        <button type="submit"  [disabled]="!userForm.form.valid"  class="btn btn-primary ">Login</button>      
+                                        <a routerLink="/forgot_password" routerLinkActive="active"  class="btn btn-link pull-right" >Forgot Password</a> 
+                                    </div>
+                                </div>
+                         
+       </form>
+             
+                        
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+  <div *ngIf="notFound"
+  class="alert alert-danger">
+  User not found.Try with valid credentials.
+  </div>
+  </div>
+  </div>
+    <div class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+                <hr>
+                <a  routerLink="/register" routerLinkActive="active" class="btn btn-success btn-block">Create Account</a> 
+</div>
+</div>    
+  </div>
+  
+  

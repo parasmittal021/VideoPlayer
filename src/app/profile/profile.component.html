@@ -1,0 +1,53 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/home">VideoPlayer</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li ><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a routerLink="/videos" routerLinkActive="active">PlayList</a></li>
+    
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a routerLink="/profile" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+          <li ><a (click)="logout()">LogOut</a> </li>  
+        </ul>
+    </div>
+  </nav>
+  
+  
+  
+
+<div class="container">
+  
+
+    <div class="panel panel-primary text-center" style="margin-top:100px">
+      <div class="panel-heading">Your Profile</div>
+      <div class="panel-body">
+          <div class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-3 control-label">First Name</label>
+                <p class="form-control-static">{{ details?.firstName }}</p>
+              </div>
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Last Name</label>
+                  <p class="form-control-static">{{ details?.lastName }}</p>
+                </div>
+              <div class="form-group">
+                <label class="col-sm-3 control-label">Email</label>
+                <p class="form-control-static">{{ details?.email }}</p>
+              </div>
+              <div class="form-group">
+                  <label class="col-sm-3 control-label">Phone Number</label>
+                  <p class="form-control-static">{{ details?.phone }}</p>
+                </div>
+            </div>
+
+
+      </div>
+    </div>
+
+   
+  </div>
