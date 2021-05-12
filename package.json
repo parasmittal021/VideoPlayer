@@ -35,7 +35,7 @@
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.13",
     "morgan": "^1.9.1",
-    "nodemailer": "^5.1.1",
+    "nodemailer": "^6.4.16",
     "nodemailer-express-handlebars": "^3.0.0",
     "nodeman": "^1.1.2",
     "passport": "^0.4.0",
